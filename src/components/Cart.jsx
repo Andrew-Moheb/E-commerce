@@ -45,7 +45,7 @@ function Cart() {
           </button>
           <h1>Cart</h1>
 
-          <div className="bg-white flex items-center justify-center py-2 px-2 rounded-full"></div>
+          <div className="bg-slate-50 flex items-center justify-center py-2 px-2 rounded-full"></div>
         </div>
         <div className="mx-auto w-[90%] relative top-[7rem] h-[26rem] flex flex-col gap-10 overflow-scroll mb-1">
           {/* cart item */}
@@ -64,22 +64,25 @@ function Cart() {
         </div>
         {/* continue btn */}
         <div className="w-[90%]  fixed bottom-[5rem] left-[5%] flex flex-col gap-5 items-center">
-          <button
-            onClick={() => {
-              clearCart();
-            }}
-            className=" bg-primary text-white w-full py-4 rounded-full"
-          >
-            CheckOut
-          </button>
+          {cart.length > 0 && (
+            <button
+              onClick={() => {
+                clearCart();
+              }}
+              className=" bg-primary text-white w-full py-4 rounded-full"
+            >
+              CheckOut
+            </button>
+          )}
           {checkOut && (
             <>
               <button
                 onClick={() => navigate("/products")}
-                className="bg-slate-300 flex items-center  fixed bottom-[10.5rem]  justify-center py-4   text-black rounded-full w-12 h-12  transition-all animation ease-linear"
+                className="bg-slate-300 flex items-center   fixed  bottom-[10.5rem]  justify-center py-4   text-black rounded-full w-[60px] h-[60px] "
               >
-                <ion-icon name="arrow-back-outline"></ion-icon>
+                <ion-icon name="arrow-back-outline" size="small"></ion-icon>
               </button>
+              <p className="relative bottom-12">Go Back</p>
             </>
           )}
         </div>
