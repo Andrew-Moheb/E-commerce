@@ -111,7 +111,7 @@ function ProductDetails() {
         </div>
       )}
       <ToastContainer
-        autoClose={1200}
+        autoClose={1800}
         position="top-center"
         transition={Zoom}
       />
