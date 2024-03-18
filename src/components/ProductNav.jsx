@@ -22,7 +22,7 @@ function ProductNav({ filter, setFilter, products }) {
         </button>
         <button
           onClick={() => filterProduct("men's clothing")}
-          className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark  "
+          className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus focus:bg-primaryDark focus:text-white focus:border-primaryDark"
         >
           Men&apos;s Clothing
         </button>
