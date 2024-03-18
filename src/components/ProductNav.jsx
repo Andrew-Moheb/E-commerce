@@ -14,18 +14,18 @@ function ProductNav({ filter, setFilter, products }) {
         id="slider"
         className="w-full overflow-x-scroll  whitespace-nowrap  scroll-smooth flex gap-3 scroll-none no-scrollbar animation ease-linear"
       >
-        <button
+        <div
           onClick={() => setFilter(products)}
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block ml-6 focus:bg-primaryDark focus:text-white focus:border-primaryDark"
         >
           All
-        </button>
-        <button
+        </div>
+        <div
           onClick={() => filterProduct("men's clothing")}
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus focus:bg-primaryDark focus:text-white focus:border-primaryDark"
         >
           Men&apos;s Clothing
-        </button>
+        </div>
         <button
           onClick={() => filterProduct("women's clothing")}
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark "
