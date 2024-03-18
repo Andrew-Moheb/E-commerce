@@ -14,18 +14,18 @@ function ProductNav({ filter, setFilter, products }) {
         id="slider"
         className="w-full overflow-x-scroll  whitespace-nowrap  scroll-smooth flex gap-3 scroll-none no-scrollbar animation ease-linear"
       >
-        <div
+        <button
           onClick={() => setFilter(products)}
-          className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block ml-6 focus:bg-primaryDark focus:text-white focus:border-primaryDark"
+          className="px-3 py-1 w-auto rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block ml-6 focus:bg-primaryDark focus:text-white focus:border-primaryDark focus:px-3 focus:py-1 focus:w-auto"
         >
           All
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => filterProduct("men's clothing")}
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus focus:bg-primaryDark focus:text-white focus:border-primaryDark"
         >
           Men&apos;s Clothing
-        </div>
+        </button>
         <button
           onClick={() => filterProduct("women's clothing")}
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark "
@@ -34,7 +34,7 @@ function ProductNav({ filter, setFilter, products }) {
         </button>
         <button
           onClick={() => filterProduct("jewelery")}
-          className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark"
+          className="px-3 py-1 w-auto rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark"
         >
           Jewelery
         </button>
@@ -43,9 +43,6 @@ function ProductNav({ filter, setFilter, products }) {
           className="px-3 py-1 rounded-lg border-slate-300 border-2 text-slate-500 text-sm inline-block focus:bg-primaryDark focus:text-white focus:border-primaryDark mr-5 "
         >
           Electronic
-        </button>
-        <button className="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300">
-          test
         </button>
       </div>
     </div>
