@@ -2,9 +2,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import Loader from "./Loader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCart, delCart } from "../redux/action";
+import { addCart } from "../redux/action";
+// toaster is here :
+import { Bounce, Slide, ToastContainer, Zoom, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductDetails() {
+  function notify() {
+    toast.success("Add to Cart successfuly");
+  }
+
   const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState();
@@ -15,6 +22,7 @@ function ProductDetails() {
   const dispatch = useDispatch();
   function addProduct(product) {
     dispatch(addCart(product));
+    notify();
   }
 
   useEffect(() => {
@@ -102,6 +110,11 @@ function ProductDetails() {
           </div>
         </div>
       )}
+      <ToastContainer
+        autoClose={1200}
+        position="top-center"
+        transition={Zoom}
+      />
     </>
   );
 }

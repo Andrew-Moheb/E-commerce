@@ -22,10 +22,10 @@ function BottomNav() {
         className="flex flex-col gap-2 items-center justify-center text-slate-800 active:text-primaryDark focus:text-primaryDark focus:font-medium transition-all"
       >
         <ion-icon name="bag-outline"></ion-icon>
-        <p className="text-base font-base">
-          cart{" "}
+        <p className="text-base font-base flex items-center gap-[2px]">
+          cart
           <span className="text-lg font-bold text-primaryDark">
-            {state.length}
+            {state.length ? state.length : ""}
           </span>
         </p>
       </button>

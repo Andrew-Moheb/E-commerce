@@ -1,23 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import Cartitem from "./Cartitem";
 import { useState } from "react";
-
 import BottomNav from "./BottomNav";
 import ReactConfetti from "react-confetti";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, delCart } from "../redux/action";
+import { ToastContainer, Zoom, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Cart() {
   const [checkOut, setCheckout] = useState(false);
+  const notify = () => toast.success("Your Order has been Placed successfuly");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cart = useSelector((state) => state.handleCart);
-  console.log(cart);
 
   function clearCart() {
     cart.length = "";
     setCheckout(!checkOut);
+    notify();
   }
 
   function addingToCart(item) {
@@ -61,7 +63,7 @@ function Cart() {
           ))}
         </div>
         {/* continue btn */}
-        <div className="w-[90%]  fixed bottom-[5rem] left-[5%] flex flex-col gap-10 items-center">
+        <div className="w-[90%]  fixed bottom-[5rem] left-[5%] flex flex-col gap-5 items-center">
           <button
             onClick={() => {
               clearCart();
@@ -71,12 +73,14 @@ function Cart() {
             CheckOut
           </button>
           {checkOut && (
-            <button
-              onClick={() => navigate("/products")}
-              className="bg-slate-300 flex items-center  fixed bottom-[12rem]  justify-center py-4   text-black rounded-full w-12 h-12  transition-all animation ease-linear"
-            >
-              <ion-icon name="arrow-back-outline"></ion-icon>
-            </button>
+            <>
+              <button
+                onClick={() => navigate("/products")}
+                className="bg-slate-300 flex items-center  fixed bottom-[10.5rem]  justify-center py-4   text-black rounded-full w-12 h-12  transition-all animation ease-linear"
+              >
+                <ion-icon name="arrow-back-outline"></ion-icon>
+              </button>
+            </>
           )}
         </div>
         {/* summary */}
@@ -87,6 +91,11 @@ function Cart() {
         )}
         <BottomNav />
       </div>
+      <ToastContainer
+        transition={Zoom}
+        position="top-center"
+        autoClose={3500}
+      />
     </>
   );
 }

@@ -18,8 +18,6 @@ function Home() {
         setProducts(data);
         setFilter(data);
         setLoading(false);
-        console.log(data);
-        console.log(data[0].image);
       } catch (error) {
         alert(error);
       }
